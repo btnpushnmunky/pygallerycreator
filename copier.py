@@ -5,7 +5,12 @@ import shutil
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-dist_path = os.path.join(os.path.expanduser("~"), "Desktop", "dist")
+def get_desktop():
+    return os.path.join(os.path.expanduser("~"), "Desktop")
+
+desktop = get_desktop()
+
+dist_path = os.path.join(desktop, 'dist')
 
 def make_dist_dir():
     os.mkdir(dist_path)
