@@ -5,6 +5,7 @@ import shutil
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+
 def get_desktop():
     return os.path.join(os.path.expanduser("~"), "Desktop")
 
@@ -12,12 +13,15 @@ desktop = get_desktop()
 
 dist_path = os.path.join(desktop, 'dist')
 
+
 def make_dist_dir():
     os.mkdir(dist_path)
+
 
 def copy_template():
     logger.debug("Copy index.html template to current directory")
     shutil.copy("templates/index.html", f"{dist_path}/index.html")
+
 
 def copy_resources():
     logger.debug("Copy the montage and lightbox directories")
