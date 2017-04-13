@@ -3,7 +3,7 @@ A utility to create web galleries from a directory of images
 
 **Requirements**
 
-Python 3
+Python 3.6 (Uses new f strings)
 
 Automatic Image Montage (included in repo)
 https://tympanus.net/codrops/2011/08/30/automatic-image-montage/
