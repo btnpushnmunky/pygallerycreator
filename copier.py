@@ -18,9 +18,9 @@ def make_dist_dir(path):
     os.mkdir(path)
 
 
-def copy_template(path):
-    logger.debug("Copy index.html template to current directory")
-    shutil.copy("templates/index.html", f"{path}/index.html")
+# def copy_template(path):
+#     logger.debug("Copy index.html template to current directory")
+#     shutil.copy("templates/index.html", f"{path}/index.html")
 
 
 def copy_resources(path):
@@ -31,5 +31,5 @@ def copy_resources(path):
 
 if __name__ == "__main__":
     make_dist_dir(dist_path)
-    copy_template(dist_path)
+    #copy_template(dist_path)
     copy_resources(dist_path)
