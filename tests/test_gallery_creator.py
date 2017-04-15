@@ -8,11 +8,10 @@ def test_create_image_list():
     assert len(image_list) == 3
 
 
-def test_found_template():
-    template = None
-    assert template
-
-
 def test_got_image_dir():
     dir = None
     assert dir
+
+def test_read_template():
+    template = gallery_creator.create_html_file()
+    assert "<!DOCTYPE html>" in str(template)
