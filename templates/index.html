@@ -22,7 +22,9 @@
 			<div class="am-container" id="am-container">
 				<!-- images go here -->
 				<!-- <a href="#"><img src="images/1.jpg"></img></a> -->
-
+				{% for image in images %}
+                     <a href="#"><img src="images/{{image}}"></img></a>
+                {% endfor %}
 			</div>
 		</div>
 
