@@ -1,6 +1,7 @@
 import gallery_creator
 import os
 
+
 def test_create_image_list():
     dir = os.path.dirname(__file__)
     test_img_path = os.path.join(dir, "test_imgs")
