@@ -1,7 +1,7 @@
 import os
 import tempfile
 from pathlib import Path
-import copier
+from src import copier
 
 def test_index_template_exists():
     assert os.path.isfile("./templates/index.html")
