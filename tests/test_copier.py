@@ -8,11 +8,11 @@ def test_index_template_exists():
 
 
 def test_montage_dir_exists():
-    assert os.path.isdir("./montage")
+    assert os.path.isdir("./vendor/montage")
 
 
 def test_lightbox_dir_exists():
-    assert os.path.isdir("./lightbox")
+    assert os.path.isdir("./vendor/lightbox")
 
 
 def test_dist_creation():

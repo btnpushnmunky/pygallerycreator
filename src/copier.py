@@ -19,5 +19,5 @@ def make_dist_dir(path):
 
 
 def copy_resources(path):
-    shutil.copytree("lightbox", f"{path}/lightbox")
-    shutil.copytree("montage", f"{path}/montage")
+    shutil.copytree("vendor/lightbox", f"{path}/lightbox")
+    shutil.copytree("vendor/montage", f"{path}/montage")
