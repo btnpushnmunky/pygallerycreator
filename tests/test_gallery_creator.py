@@ -11,7 +11,7 @@ TEST_IMG_DIR = os.path.join(test_file_dir, "test_imgs")
 
 def test_create_image_list():
     image_list = gallery_creator.get_image_list(TEST_IMG_DIR)
-    logger.debug(image_list)
+    logger.debug(f"Test list is {image_list}")
     assert len(image_list) == 3
 
 

@@ -19,6 +19,5 @@ def make_dist_dir(path):
 
 
 def copy_resources(path):
-    logger.debug("Copy the montage and lightbox directories")
     shutil.copytree("lightbox", f"{path}/lightbox")
     shutil.copytree("montage", f"{path}/montage")
