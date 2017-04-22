@@ -11,7 +11,7 @@ def get_desktop():
 
 desktop = get_desktop()
 
-dist_path = os.path.join(desktop, 'py_gallery_dist')
+default_dist_path = os.path.join(desktop, 'py_gallery_dist')
 
 
 def make_dist_dir(path):
