@@ -1,5 +1,4 @@
 import main
-import logging
 from src.copier import default_dist_path
 
 
