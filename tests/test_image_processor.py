@@ -6,15 +6,12 @@ def test_image_creation():
     assert False
 
 
-def test_thumb_dir_creation():
+def test_img_directory_creation():
     test_dir = tempfile.TemporaryDirectory()
     test_dir_path = os.path.join(tempfile.gettempdir(), test_dir.name)
-    src.image_processor.create_thumb_dir(test_dir_path)
+    src.image_processor.create_img_directories(test_dir_path)
     assert os.path.isdir(os.path.join(test_dir_path, "thumbs"))
-
-
-def test_resized_img_dir_creation():
-    assert False
+    assert os.path.isdir(os.path.join(test_dir_path, "large_imgs"))
 
 
 def test_image_resize_and_save():
