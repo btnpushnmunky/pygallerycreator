@@ -9,7 +9,7 @@ def test_get_user_path(monkeypatch):
 
 
 def test_get_user_path_no_input(monkeypatch):
-    monkeypatch.setitem(__builtins__, "input", lambda x: None)
+    monkeypatch.setitem(__builtins__, "input", lambda x: "")
     user_path = main.get_user_path()
     assert user_path == default_dist_path
 
