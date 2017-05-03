@@ -19,5 +19,5 @@ def create_images(user_images_dir, dest_dir):
     for img_file in os.listdir(user_images_dir):
         img_path = os.path.join(user_images_dir, img_file)
         img = Image.open(img_path)
-        #TODO: Create 'large' file and write to correct directory
-        #TODO: Create thumb and write to correct directory
+        # TODO: Create 'large' file and write to correct directory
+        # TODO: Create thumb and write to correct directory
