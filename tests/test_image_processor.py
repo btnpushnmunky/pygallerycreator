@@ -7,6 +7,7 @@ TEST_IMG_DIR = os.path.join(CWD, 'test_imgs')
 TEST_DIR = tempfile.TemporaryDirectory()
 TEST_DIR_PATH = os.path.join(tempfile.gettempdir(), TEST_DIR.name)
 
+
 def test_image_creation():
     src.image_processor.create_images(TEST_IMG_DIR)
 
