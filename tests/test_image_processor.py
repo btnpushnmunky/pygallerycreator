@@ -13,7 +13,7 @@ def test_image_creation():
 
 
 def test_img_directory_creation():
-    src.image_processor.create_img_directories(TEST_DIR_PATH)
+    src.image_processor.create_images(TEST_IMG_DIR, TEST_DIR_PATH)
     assert os.path.isdir(os.path.join(TEST_DIR_PATH, "thumbs"))
     assert os.path.isdir(os.path.join(TEST_DIR_PATH, "large_imgs"))
 
