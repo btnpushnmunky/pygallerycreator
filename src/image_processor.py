@@ -4,12 +4,6 @@ import os
 THUMB_SIZE = (128, 128)
 
 
-def create_img_directories(base_path):
-    """
-    Create a directory for the thumbs and resized 'large' images
-    """
-    
-
 def create_images(user_images_dir, base_path):
     """
     Open the original image files and save a thumb and gallery version
