@@ -1,7 +1,7 @@
 from PIL import Image
 import os
 
-THUMB_SIZE = (128, 128)
+THUMB_SIZE = (512, 512)
 
 
 def create_images(user_images_dir, base_save_path):

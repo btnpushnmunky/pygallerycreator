@@ -15,6 +15,7 @@ default_dist_path = os.path.join(desktop, 'py_gallery_dist')
 
 
 def make_dist_dir(path):
+    # TODO: Error handling for if the directory exists
     os.mkdir(path)
 
 
