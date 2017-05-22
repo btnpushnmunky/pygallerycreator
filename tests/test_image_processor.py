@@ -23,4 +23,4 @@ def test_image_resize_and_save():
 
 
 def test_thumbnail_creation():
-    assert False
+    assert len(os.listdir(os.path.join(TEST_DIR_PATH, "thumbs"))) == 3
