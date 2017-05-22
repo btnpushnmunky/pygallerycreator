@@ -7,10 +7,11 @@ def create_images(user_images_dir, base_save_path):
     """
     Open the original image files and save a thumb and gallery version
     """
-    os.mkdir(os.path.join(base_save_path, "large_imgs"))
-    os.mkdir(os.path.join(base_save_path, "thumbs"))
     thumb_dir = os.path.join(base_save_path, "thumbs")
     large_image_dir = os.path.join(base_save_path, "large_imgs")
+    os.mkdir(thumb_dir)
+    os.mkdir(large_image_dir)
+
 
     for img_file in os.listdir(user_images_dir):
 

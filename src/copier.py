@@ -15,9 +15,10 @@ default_dist_path = os.path.join(desktop, 'py_gallery_dist')
 
 
 def make_dist_dir(path):
-    # TODO: Error handling for if the directory exists
-    os.mkdir(path)
-
+    if not os.path.exists(path):
+        os.mkdir(path)
+    else:
+        print("The specified destination already exists.")
 
 def copy_resources(path):
     shutil.copytree("vendor/lightbox", f"{path}/lightbox")
