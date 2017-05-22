@@ -12,14 +12,22 @@ def create_images(user_images_dir, base_save_path):
     os.mkdir(thumb_dir)
     os.mkdir(large_image_dir)
 
-
-    for img_file in os.listdir(user_images_dir):
-
-        # TODO: Create 'large' file and write to correct directory
-
+    def create_thumb(img):
+        """
+        Create the thumbnail for an image
+        :param img: 
+        :return: 
+        """
         thumb_name = img_file.split('.')[0]
         outfile = ".".join((thumb_name, "jpg"))
         img = Image.open(os.path.join(user_images_dir, img_file))
         img.thumbnail(THUMB_SIZE)
         thumb_file = os.path.join(thumb_dir, outfile)
         img.save(thumb_file)
+
+    # Process the files
+    for img_file in os.listdir(user_images_dir):
+        create_thumb(img_file)
+
+
+        # TODO: Create 'large' file and write to correct directory
