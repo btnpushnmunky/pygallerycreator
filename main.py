@@ -8,7 +8,7 @@ def get_user_path():
     """
     Get the user's destination directory for the gallery folder
     """
-    user_path = input("Please enter a destination directory for the gallery. [Desktop] ")
+    user_path = input("Please enter a destination directory for the gallery: [Desktop] ")
     if user_path is "":
         user_path = src.copier.default_dist_path
     else:
@@ -21,7 +21,7 @@ def create_image_gallery():
     Create the gallery directory and it's contents
     """
     user_path = get_user_path()
-    image_dir = input("Please enter the path to your image directory")
+    image_dir = input("Please enter the path to your image directory: ")
     html = gc.create_html(image_dir)
     src.copier.make_dist_dir(user_path)
     src.copier.copy_resources(user_path)

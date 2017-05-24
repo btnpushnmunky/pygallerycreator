@@ -18,8 +18,8 @@ def test_img_directory_creation():
     assert os.path.isdir(os.path.join(TEST_DIR_PATH, "large_imgs"))
 
 
-def test_image_resize_and_save():
-    assert False
+def test_large_file_creation():
+    assert len(os.listdir(os.path.join(TEST_DIR_PATH, "large_imgs"))) == 3
 
 
 def test_thumbnail_creation():
