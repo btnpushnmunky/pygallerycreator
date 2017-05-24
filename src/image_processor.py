@@ -20,8 +20,8 @@ def create_images(user_images_dir, base_save_path):
         :param img_filename: Filename of image as a string 
         :return: Image with name excluding extension
         """
-        img_name = img_filename.split('.')[0]
-        outfile = ".".join((img_name, "jpg"))
+        final_img_name = img_filename.split('.')[0]
+        outfile = ".".join((final_img_name, "jpg"))
         img = Image.open(os.path.join(user_images_dir, img_filename))
         return img, outfile
 
