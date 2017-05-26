@@ -1,7 +1,7 @@
 ﻿from PIL import Image
 import os
 
-THUMB_SIZE = (512, 512)
+THUMB_SIZE = (256, 256)
 LARGE_SIZE = (2048, 2048)
 
 
@@ -17,7 +17,7 @@ def create_images(user_images_dir, base_save_path):
     def open_image(img_filename):
         """
         Open an image file and return it and its name
-        :param img_filename: Filename of image as a string 
+        :param img_filename: Filename of image as a string
         :return: Image with name excluding extension
         """
         final_img_name = img_filename.split('.')[0]
@@ -28,7 +28,7 @@ def create_images(user_images_dir, base_save_path):
     def create_image_versions(original_image):
         """
         Create the thumbnail and large image for an image file
-        :param original_image: Filename as string 
+        :param original_image: Filename as string
         :return: None
         """
         img, img_name = open_image(original_image)
