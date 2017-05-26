@@ -8,6 +8,9 @@ LARGE_SIZE = (2048, 2048)
 def create_images(user_images_dir, base_save_path):
     """
     Open the original image files and save a thumb and gallery version
+    :param user_images_dir: User's image directory path as a string
+    :param base_save_path: The parent directory that will hold image directories
+    :return: None
     """
     thumb_dir = os.path.join(base_save_path, "thumbs")
     large_image_dir = os.path.join(base_save_path, "large_imgs")
