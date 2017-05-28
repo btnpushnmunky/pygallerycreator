@@ -5,14 +5,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Automatic Image Montage with jQuery" />
-        <meta name="keywords" content="jquery, images, montage, fullscreen, floating, grid, automatic" />
-        <meta name="author" content="Codrops" />
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="montage/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="montage/css/style.css" />
         <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="lightbox/css/lightbox.min.css"/>
     </head>
     <body>
         <div class="container">
@@ -23,11 +21,12 @@
 				<!-- images go here -->
 				<!-- <a href="#"><img src="images/1.jpg"></img></a> -->
 				{% for image in images %}
-                     <a href="large_imgs/{{image}}"><img src="thumbs/{{image}}"></img></a>
+                <a href="large_imgs/{{image}}" data-lightbox="{{image}}"><img src="thumbs/{{image}}"></img></a>
                 {% endfor %}
 			</div>
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="lightbox/js/lightbox-plus-jquery.min.js"></script>
         <script type="text/javascript" src="montage/js/jquery.montage.min.js"></script>
         <script type="text/javascript">
             $(function() {
