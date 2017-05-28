@@ -9,12 +9,12 @@ def get_user_path():
     Get the user's destination directory for the gallery folder.
     :return: User image directory path as a string.
     """
-    user_path = input("Please enter a destination directory for the gallery: [Desktop] ")
-    if user_path is "":
-        user_path = src.copier.default_dist_path
+    gallery_dist_name = input("Please enter a name for your gallery directory: [py_gallery_dist] ")
+    if gallery_dist_name is "":
+        gallery_dist_name = src.copier.default_dist_path
     else:
-        pass
-    return user_path
+        gallery_dist_name = os.path.join(src.copier.get_desktop(), gallery_dist_name)
+    return gallery_dist_name
 
 
 def create_image_gallery():

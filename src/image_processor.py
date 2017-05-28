@@ -13,9 +13,9 @@ def create_images(user_images_dir, base_save_path):
     :return: None
     """
     thumb_dir = os.path.join(base_save_path, "thumbs")
-    large_image_dir = os.path.join(base_save_path, "large_imgs")
+    overlay_image_dir = os.path.join(base_save_path, "large_imgs")
     os.mkdir(thumb_dir)
-    os.mkdir(large_image_dir)
+    os.mkdir(overlay_image_dir)
 
     def open_image(img_filename):
         """
@@ -40,7 +40,7 @@ def create_images(user_images_dir, base_save_path):
         img.save(thumb_file)
         large_img, large_img_name = open_image(original_image)
         large_img.thumbnail(LARGE_SIZE)
-        large_file = os.path.join(large_image_dir, large_img_name)
+        large_file = os.path.join(overlay_image_dir, large_img_name)
         large_img.save(large_file)
 
     for file_name in os.listdir(user_images_dir):
