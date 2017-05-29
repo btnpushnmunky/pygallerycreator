@@ -1,5 +1,5 @@
-import main
-from src.copier import default_dist_path
+from pygallerycreator import main
+from pygallerycreator.copier import default_dist_path
 
 
 def test_get_user_path(monkeypatch):

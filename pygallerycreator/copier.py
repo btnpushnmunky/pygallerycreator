@@ -4,7 +4,7 @@ import shutil
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-
+base_dir = os.path.dirname((os.path.realpath(__file__)))
 
 def get_desktop():
     """

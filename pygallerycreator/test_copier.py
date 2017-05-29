@@ -1,18 +1,18 @@
 import os
 import tempfile
-from src import copier
+from . import copier
 
 
 def test_index_template_exists():
-    assert os.path.isfile("./templates/index.html")
+    assert os.path.isfile("templates/index.html")
 
 
 def test_montage_dir_exists():
-    assert os.path.isdir("./vendor/montage")
+    assert os.path.isdir("vendor/montage")
 
 
 def test_lightbox_dir_exists():
-    assert os.path.isdir("./vendor/lightbox")
+    assert os.path.isdir("vendor/lightbox")
 
 
 def test_dist_creation():

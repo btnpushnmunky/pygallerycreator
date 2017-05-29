@@ -1,7 +1,7 @@
-import src.copier
-import src.gallery_creator as gc
+from . import copier
+from . import gallery_creator as gc
+from . import image_processor
 import os
-import src.image_processor
 
 
 def get_user_path():
@@ -11,9 +11,9 @@ def get_user_path():
     """
     gallery_dist_name = input("Please enter a name for your gallery directory: [py_gallery_dist] ")
     if gallery_dist_name is "":
-        gallery_dist_name = src.copier.default_dist_path
+        gallery_dist_name = copier.default_dist_path
     else:
-        gallery_dist_name = os.path.join(src.copier.get_desktop(), gallery_dist_name)
+        gallery_dist_name = os.path.join(copier.get_desktop(), gallery_dist_name)
     return gallery_dist_name
 
 
