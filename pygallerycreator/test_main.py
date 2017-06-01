@@ -14,5 +14,9 @@ def test_get_user_path_no_input(monkeypatch):
     assert user_path == default_dist_path
 
 
+def test_create_gallery(monkeypatch):
+    monkeypatch.setitem(__builtins__, "input", lambda x: "")
+    assert 1
+
 def teardown_method():
     main.input = input

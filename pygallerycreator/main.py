@@ -1,6 +1,7 @@
-from . import copier
-from . import gallery_creator as gc
-from . import image_processor
+# from . import copier
+import copier
+import gallery_creator
+import image_processor
 import os
 
 
@@ -23,10 +24,10 @@ def create_image_gallery():
     """
     user_directory_path = get_user_path()
     image_dir = input("Please enter the path to your image directory: ")
-    html = gc.create_html(image_dir)
-    src.copier.make_dist_dir(user_directory_path)
-    src.copier.copy_resources(user_directory_path)
-    src.image_processor.create_images(image_dir, user_directory_path)
+    html = gallery_creator.create_html(image_dir)
+    copier.make_dist_dir(user_directory_path)
+    copier.copy_resources(user_directory_path)
+    image_processor.create_images(image_dir, user_directory_path)
 
     with open(os.path.join(user_directory_path, "index.html"), "w+") as f:
         f.write(html)

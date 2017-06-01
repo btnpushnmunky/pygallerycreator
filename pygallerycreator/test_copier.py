@@ -1,6 +1,6 @@
 import os
 import tempfile
-from . import copier
+import copier
 
 
 def test_index_template_exists():
@@ -15,9 +15,13 @@ def test_lightbox_dir_exists():
     assert os.path.isdir("vendor/lightbox")
 
 
-def test_dist_creation():
+def test_get_desktop():
     d = copier.get_desktop()
-    temp_dir = tempfile.TemporaryDirectory(dir=d)
-    temp_dir_path = os.path.join(d, temp_dir.name)
+    assert "Desktop" in d
+
+
+def test_dist_creation(tmpdir):
+    temp_dir_path = tmpdir.mkdir("testing")
+    print(temp_dir_path)
     copier.copy_resources(temp_dir_path)
     assert os.path.isdir(temp_dir_path)
