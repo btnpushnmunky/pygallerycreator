@@ -4,5 +4,7 @@
 *.suo
 *.pyproj
 /PyGalleryCreator.sln
+__pycache__
+.idea
 
 \.coverage
