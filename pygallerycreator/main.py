@@ -1,4 +1,3 @@
-# from . import copier
 import copier
 import gallery_creator
 import image_processor
