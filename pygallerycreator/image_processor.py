@@ -2,14 +2,15 @@
 import os
 
 THUMB_SIZE = (256, 256)
-LARGE_SIZE = (2048, 2048)
+LARGE_SIZE = (1024, 1024)
 
 
 def create_images(user_images_dir, base_save_path):
     """
-    Open the original image files and save a thumb and gallery version
+    Open the original image files and save a thumb and gallery version.
+
     :param user_images_dir: User's image directory path as a string
-    :param base_save_path: The parent directory that will hold image directories
+    :param base_save_path: The parent directory that will hold image dirs
     :return: None
     """
     thumb_dir = os.path.join(base_save_path, "thumbs")
@@ -19,7 +20,8 @@ def create_images(user_images_dir, base_save_path):
 
     def open_image(img_filename):
         """
-        Open an image file and return it and its name
+        Open an image file and return it and its name.
+
         :param img_filename: Filename of image as a string
         :return: Image with name including extension
         """
@@ -30,7 +32,8 @@ def create_images(user_images_dir, base_save_path):
 
     def create_image_versions(original_image):
         """
-        Create the thumbnail and large image for an image file
+        Create the thumbnail and large image for an image file.
+
         :param original_image: Filename as string
         :return: None
         """

@@ -6,9 +6,11 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 base_dir = os.path.dirname((os.path.realpath(__file__)))
 
+
 def get_desktop():
     """
-    Find the user's desktop folder
+    Find the user's desktop folder.
+
     :return: Path to user's desktop as a string
     """
     return os.path.join(os.path.expanduser("~"), "Desktop")
@@ -20,7 +22,8 @@ default_dist_path = os.path.join(desktop, 'py_gallery_dist')
 
 def make_dist_dir(path):
     """
-    Create the distribution directory and it's subdirectories
+    Create the distribution directory and it's subdirectories.
+
     :param path: Path to the distribution directory
     :return: None
     """
@@ -32,9 +35,10 @@ def make_dist_dir(path):
 
 def copy_resources(path):
     """
-    Copy the javascript directories and their contents to the distribution directory
+    Copy the javascript directories and their contents to the dist directory.
+
     :param path: Path to the distribution directory
     :return: None
     """
-    shutil.copytree("vendor/lightbox", f"{path}/lightbox")
-    shutil.copytree("vendor/montage", f"{path}/montage")
+    shutil.copytree("vendor/lightbox", "{0}/lightbox".format(path))
+    shutil.copytree("vendor/montage", "{0}/montage".format(path))

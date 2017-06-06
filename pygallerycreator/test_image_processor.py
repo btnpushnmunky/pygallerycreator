@@ -1,4 +1,4 @@
-from pygallerycreator import image_processor
+from . import image_processor
 import tempfile
 import os
 import logging

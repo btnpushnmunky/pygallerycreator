@@ -1,6 +1,5 @@
 import os
-import tempfile
-import copier
+from . import copier
 
 
 def test_index_template_exists():

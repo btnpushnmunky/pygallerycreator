@@ -1,10 +1,13 @@
 beautifulsoup4==4.5.3
 certifi==2017.1.23
 colorama==0.3.7
+coverage==4.4.1
 Jinja2==2.9.5
 MarkupSafe==0.23
 olefile==0.44
 Pillow==4.1.0
 py==1.4.33
+pyflakes==1.5.0
 pytest==3.0.7
+pytest-cov==2.5.1
 wincertstore==0.2

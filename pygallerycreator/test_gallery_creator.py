@@ -1,4 +1,4 @@
-from pygallerycreator import gallery_creator
+from . import gallery_creator
 import os
 import logging
 
