@@ -9,7 +9,7 @@ install:
 
 script:
   - cd pygallerycreator 
-  - python -m pytest
+  - python -m pytest --cov=.
   
 
 after_success:
