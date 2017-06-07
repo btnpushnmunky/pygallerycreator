@@ -8,7 +8,9 @@ install:
   - pip install -r requirements.txt
   - pip install coveralls
 
-script: pytest
+script:
+  - cd pygallerycreator 
+  - pytest
   
 
 after_success:
