@@ -22,18 +22,24 @@ def get_user_path():
     return gallery_dir_name
 
 
-def create_image_gallery():
+def get_raw_image_dir():
+    """Get the user's image director."""
+    d = input("Please enter the path to your image directory: ")
+    return d
+
+
+def create_image_gallery(raw_images):
     """Create all the elements of the gallery."""
     user_directory_path = get_user_path()
-    image_dir = input("Please enter the path to your image directory: ")
-    html = gallery_creator.create_html(image_dir)
+    html = gallery_creator.create_html(raw_images)
     copier.make_dist_dir(user_directory_path)
     copier.copy_resources(user_directory_path)
-    image_processor.create_images(image_dir, user_directory_path)
+    image_processor.create_images(raw_images, user_directory_path)
 
     with open(os.path.join(user_directory_path, "index.html"), "w+") as f:
         f.write(html)
 
 
 if __name__ == "__main__":
+    user_dir = get_raw_image_dir()
     create_image_gallery()
