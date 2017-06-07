@@ -1,3 +1,5 @@
+https://travis-ci.org/btnpushnmunky/pygallerycreator.svg?branch=master
+
 A utility to create web galleries from a directory of images
 ============================================================
 
