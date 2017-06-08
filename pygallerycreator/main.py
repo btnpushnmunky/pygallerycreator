@@ -11,7 +11,8 @@ def get_user_path():
     :return: User image directory path as a string.
     """
     dir_name_input = """
-    Please enter a name for your gallery directory: [py_gallery_dist]
+    Please enter the path to your gallery directory relative
+    to your home directory. It will be created. (ex: Desktop/mygallery): [py_gallery_dist]
     """
     gallery_dir_name = input(dir_name_input)
     if gallery_dir_name is "":
@@ -42,4 +43,4 @@ def create_image_gallery(raw_images):
 
 if __name__ == "__main__":
     user_dir = get_raw_image_dir()
-    create_image_gallery()
+    create_image_gallery(user_dir)
