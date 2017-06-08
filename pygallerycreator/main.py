@@ -10,9 +10,7 @@ def get_user_path():
 
     :return: User image directory path as a string.
     """
-    dir_name_input = """
-    Please enter the path to your gallery directory relative
-    to your home directory. It will be created. (ex: Desktop/mygallery): [py_gallery_dist]
+    dir_name_input = """ Gallery path. Created in home directory. (ex: Desktop/mygallery): [py_gallery_dist]
     """
     gallery_dir_name = input(dir_name_input)
     if gallery_dir_name is "":
@@ -29,18 +27,24 @@ def get_raw_image_dir():
     return d
 
 
-def create_image_gallery(raw_images):
-    """Create all the elements of the gallery."""
-    user_directory_path = get_user_path()
-    html = gallery_creator.create_html(raw_images)
-    copier.make_dist_dir(user_directory_path)
-    copier.copy_resources(user_directory_path)
-    image_processor.create_images(raw_images, user_directory_path)
+def get_directories():
+    """Get directories."""
+    raw_directory = get_raw_image_dir()
+    new_gallery_dir = get_user_path()
+    return raw_directory, new_gallery_dir
 
-    with open(os.path.join(user_directory_path, "index.html"), "w+") as f:
+
+def create_image_gallery(raw_images, new_gallery_path):
+    """Create all the elements of the gallery."""
+    html = gallery_creator.create_html(raw_images)
+    copier.make_dist_dir(new_gallery_path)
+    copier.copy_resources(new_gallery_path)
+    image_processor.create_images(raw_images, new_gallery_path)
+
+    with open(os.path.join(new_gallery_path, "index.html"), "w+") as f:
         f.write(html)
 
 
 if __name__ == "__main__":
-    user_dir = get_raw_image_dir()
-    create_image_gallery(user_dir)
+    user_dir, new_gallery = get_directories()
+    create_image_gallery(user_dir, new_gallery)
