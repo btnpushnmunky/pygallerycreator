@@ -6,5 +6,6 @@
 /PyGalleryCreator.sln
 __pycache__
 .idea
+*.pyc
 
 \.coverage
