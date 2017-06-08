@@ -14,9 +14,9 @@ def test_lightbox_dir_exists():
     assert os.path.isdir("vendor/lightbox")
 
 
-def test_get_desktop():
-    d = copier.get_desktop()
-    assert "Desktop" in d
+def test_get_user_home():
+    path = copier.get_user_home()
+    assert path == os.path.expanduser("~")
 
 
 def test_dist_creation(tmpdir):

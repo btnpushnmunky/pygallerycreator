@@ -1,5 +1,7 @@
 from pygallerycreator import main
 from pygallerycreator.copier import default_dist_path
+import tempfile
+import os
 
 
 def test_get_user_path(monkeypatch):
@@ -25,7 +27,9 @@ def test_get_raw_images(monkeypatch):
 
 def test_create_gallery(monkeypatch):
     """Test creation of the gallery."""
-    monkeypatch.setitem(__builtins__, "input", lambda x: "test_imgs_output")
+    tdir = tempfile.TemporaryDirectory()
+    my_temp_dir = os.path.join(tdir.name, 'test_imgs_output')
+    monkeypatch.setitem(__builtins__, "input", lambda x: my_temp_dir)
     main.create_image_gallery("test_imgs")
 
 

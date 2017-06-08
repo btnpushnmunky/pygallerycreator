@@ -17,7 +17,7 @@ def get_user_path():
     if gallery_dir_name is "":
         gallery_dir_name = copier.default_dist_path
     else:
-        user_def_path = os.path.join(copier.get_desktop(), gallery_dir_name)
+        user_def_path = os.path.join(copier.get_user_home(), gallery_dir_name)
         gallery_dir_name = os.path.join(user_def_path)
     return gallery_dir_name
 
