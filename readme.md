@@ -16,3 +16,10 @@ https://tympanus.net/codrops/2011/08/30/automatic-image-montage/
 Lightbox (included in repo)
 http://lokeshdhakar.com/projects/lightbox2/#options
 
+**Full gallery view**
+
+![Alt text](screenshot1.png?raw=true)
+
+**Image in Lightbox**
+
+![Alt text](screenshot2.png?raw=true)
