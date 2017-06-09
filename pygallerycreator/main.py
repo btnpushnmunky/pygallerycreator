@@ -10,8 +10,7 @@ def get_user_path():
 
     :return: User image directory path as a string.
     """
-    dir_name_input = """ Gallery path. Created in home directory. (ex: Desktop/mygallery): [py_gallery_dist]
-    """
+    dir_name_input = "Gallery path. Created in home directory. (ex: Desktop/mygallery): [py_gallery_dist]"
     gallery_dir_name = input(dir_name_input)
     if gallery_dir_name is "":
         gallery_dir_name = copier.default_dist_path
