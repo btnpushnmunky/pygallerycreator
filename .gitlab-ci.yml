@@ -1,4 +1,11 @@
+image: python:latest
+
+before_script:
+  - python -V                                   # Print out python version for debugging
+  # Uncomment next line if your Django app needs a JS runtime:
+  # - apt-get update -q && apt-get install nodejs -yqq
+  - pip install -r requirements.txt
+  - cd pygallerycreator
+
 test:
-    - pip install requirements.txt
-    - cd pygallerycreator
-    - python -m pytest
+  - python -m pytest
