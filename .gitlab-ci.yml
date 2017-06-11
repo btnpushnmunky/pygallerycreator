@@ -1,0 +1,4 @@
+test:
+    - pip install requirements.txt
+    - cd pygallerycreator
+    - python -m pytest
