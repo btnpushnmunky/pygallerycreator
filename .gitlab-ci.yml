@@ -7,4 +7,4 @@ before_script:
 
 test:
   script:
-    - python -m pytesy --cov=.
+    - python -m pytest --cov=.
