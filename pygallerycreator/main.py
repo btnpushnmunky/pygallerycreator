@@ -2,9 +2,6 @@ import copier
 import gallery_creator
 import image_processor
 import os
-import gui
-from PyQt5 import QtGui
-import sys
 
 
 def get_user_path():
