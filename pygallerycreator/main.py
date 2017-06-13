@@ -2,6 +2,9 @@ import copier
 import gallery_creator
 import image_processor
 import os
+import gui
+from PyQt5 import QtGui, QtWidgets
+import sys
 
 
 def get_user_path():
@@ -44,6 +47,21 @@ def create_image_gallery(raw_images, new_gallery_path):
         f.write(html)
 
 
+class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(App, self).__init__(parent)
+        self.setupUi(self)
+
+
+def main():
+    app = QtWidgets.QApplication(sys.argv)
+    form = App()
+    form.show()
+    app.exec_()
+
+
 if __name__ == "__main__":
-    user_dir, new_gallery = get_directories()
-    create_image_gallery(user_dir, new_gallery)
+    main()
+# if __name__ == "__main__":
+#     user_dir, new_gallery = get_directories()
+#     create_image_gallery(user_dir, new_gallery)
