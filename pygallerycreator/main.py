@@ -48,12 +48,16 @@ def create_image_gallery(raw_images, new_gallery_path):
 
 
 class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
+    """Class for our app."""
+
     def __init__(self, parent=None):
+        """Init the class."""
         super(App, self).__init__(parent)
         self.setupUi(self)
 
 
 def main():
+    """Main function to launch the app."""
     app = QtWidgets.QApplication(sys.argv)
     form = App()
     form.show()
@@ -62,6 +66,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-# if __name__ == "__main__":
-#     user_dir, new_gallery = get_directories()
-#     create_image_gallery(user_dir, new_gallery)
