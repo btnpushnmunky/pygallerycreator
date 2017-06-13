@@ -4,6 +4,8 @@
 **Gitlab Status**
 [![build status](https://gitlab.com/dsross/PyGalleryCreator/badges/master/build.svg)](https://gitlab.com/dsross/PyGalleryCreator/commits/master) [![coverage report](https://gitlab.com/dsross/PyGalleryCreator/badges/master/coverage.svg)](https://gitlab.com/dsross/PyGalleryCreator/commits/master)
 
+*Note: Only master is building.*
+
 A utility to create web galleries from a directory of images
 ============================================================
 
