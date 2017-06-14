@@ -3,7 +3,7 @@ import gallery_creator
 import image_processor
 import os
 import gui
-from PyQt5 import QtGui, QtWidgets
+from PyQt5 import QtWidgets
 import sys
 
 
@@ -54,6 +54,16 @@ class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
         """Init the class."""
         super(App, self).__init__(parent)
         self.setupUi(self)
+        self.source_button.clicked.connect(self.get_source)
+        self.destination_button.clicked.connect(self.set_destination)
+
+    def get_source(self):
+        """Get the source directory."""
+        print("Get source")
+
+    def set_destination(self):
+        """Get the destination directory."""
+        print("Set destination")
 
 
 def main():
