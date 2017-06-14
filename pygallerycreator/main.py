@@ -56,6 +56,7 @@ class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
         self.setupUi(self)
         self.source_button.clicked.connect(self.get_source)
         self.destination_button.clicked.connect(self.set_destination)
+        self.create_button.clicked.connect(self.create)
 
     def get_source(self):
         """Get the source directory."""
@@ -66,6 +67,9 @@ class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
         """Get the destination directory."""
         dlg = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose a destination directory")
         print(dlg)
+
+    def create(self):
+        print("Create gallery")
 
 
 def main():
