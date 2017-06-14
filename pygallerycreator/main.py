@@ -59,6 +59,7 @@ class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
 
     def get_source(self):
         """Get the source directory."""
+        dlg = QtWidgets.QFileDialog()
         print("Get source")
 
     def set_destination(self):
