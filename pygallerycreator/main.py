@@ -73,7 +73,9 @@ class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
     def create(self):
         print("Source: {0}".format(self.source_folder))
         print("Destination: {0}".format(self.destination_folder))
-
+        create_image_gallery(self.source_folder, self.destination_folder)
+        dlg = QtWidgets.QMessageBox(text="Gallery created")
+        dlg.exec_()
 
 def main():
     """Main function to launch the app."""
