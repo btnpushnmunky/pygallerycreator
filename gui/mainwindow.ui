@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>327</width>
-    <height>149</height>
+    <width>262</width>
+    <height>168</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,18 +16,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="source_button">
-      <property name="text">
-       <string>Source</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="destination_button">
-      <property name="text">
-       <string>Destination</string>
-      </property>
-     </widget>
+     <widget class="QListWidget" name="feedback_window"/>
     </item>
     <item>
      <widget class="QPushButton" name="create_button">

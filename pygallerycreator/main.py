@@ -39,7 +39,7 @@ def get_directories():
 def create_image_gallery(raw_images, new_gallery_path):
     """Create all the elements of the gallery."""
     html = gallery_creator.create_html(raw_images)
-    copier.make_dist_dir(new_gallery_path)
+    # copier.make_dist_dir(new_gallery_path)
     copier.copy_resources(new_gallery_path)
     image_processor.create_images(raw_images, new_gallery_path)
 
@@ -54,28 +54,21 @@ class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
         """Init the class."""
         super(App, self).__init__(parent)
         self.setupUi(self)
-        self.source_button.clicked.connect(self.get_source)
-        self.destination_button.clicked.connect(self.set_destination)
+        # self.source_button.clicked.connect(self.get_source)
+        # self.destination_button.clicked.connect(self.set_destination)
         self.create_button.clicked.connect(self.create)
         self.source_folder = ""
         self.destination_folder = ""
 
-    def get_source(self):
-        """Get the source directory."""
-        dlg = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose the source directory")
-        self.source_folder = dlg
-
-    def set_destination(self):
-        """Get the destination directory."""
-        dlg = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose a destination directory")
-        self.destination_folder = dlg
-
     def create(self):
+        self.source_folder = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose the source directory")
+        self.destination_folder = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose a destination directory")
         print("Source: {0}".format(self.source_folder))
         print("Destination: {0}".format(self.destination_folder))
         create_image_gallery(self.source_folder, self.destination_folder)
         dlg = QtWidgets.QMessageBox(text="Gallery created")
         dlg.exec_()
+
 
 def main():
     """Main function to launch the app."""

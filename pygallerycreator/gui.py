@@ -11,19 +11,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(327, 149)
+        MainWindow.resize(262, 168)
         self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralWidget)
         self.verticalLayout.setContentsMargins(11, 11, 11, 11)
         self.verticalLayout.setSpacing(6)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.source_button = QtWidgets.QPushButton(self.centralWidget)
-        self.source_button.setObjectName("source_button")
-        self.verticalLayout.addWidget(self.source_button)
-        self.destination_button = QtWidgets.QPushButton(self.centralWidget)
-        self.destination_button.setObjectName("destination_button")
-        self.verticalLayout.addWidget(self.destination_button)
+        self.feedback_window = QtWidgets.QListWidget(self.centralWidget)
+        self.feedback_window.setObjectName("feedback_window")
+        self.verticalLayout.addWidget(self.feedback_window)
         self.create_button = QtWidgets.QPushButton(self.centralWidget)
         self.create_button.setObjectName("create_button")
         self.verticalLayout.addWidget(self.create_button)
@@ -41,7 +38,5 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "PyGalleryCreator"))
-        self.source_button.setText(_translate("MainWindow", "Source"))
-        self.destination_button.setText(_translate("MainWindow", "Destination"))
         self.create_button.setText(_translate("MainWindow", "Create Gallery"))
 
