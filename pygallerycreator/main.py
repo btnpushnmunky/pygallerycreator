@@ -61,12 +61,15 @@ class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
         self.destination_folder = ""
 
     def create(self):
+        """Create the gallery."""
         self.source_folder = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose the source directory")
         self.destination_folder = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose a destination directory")
-        print("Source: {0}".format(self.source_folder))
-        print("Destination: {0}".format(self.destination_folder))
         create_image_gallery(self.source_folder, self.destination_folder)
-        dlg = QtWidgets.QMessageBox(text="Gallery created")
+        # Display a success dialog
+        dlg = QtWidgets.QMessageBox()
+        dlg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+        dlg.setText("Gallery Created: {0}".format(self.destination_folder))
+        dlg.setWindowTitle("Success!")
         dlg.exec_()
 
 
