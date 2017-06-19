@@ -2,9 +2,6 @@ import copier
 import gallery_creator
 import image_processor
 import os
-import gui
-from PyQt5 import QtWidgets
-import sys
 
 
 def get_user_path():
@@ -39,7 +36,7 @@ def get_directories():
 def create_image_gallery(raw_images, new_gallery_path):
     """Create all the elements of the gallery."""
     html = gallery_creator.create_html(raw_images)
-    # copier.make_dist_dir(new_gallery_path)
+    copier.make_dist_dir(new_gallery_path)
     copier.copy_resources(new_gallery_path)
     image_processor.create_images(raw_images, new_gallery_path)
 
@@ -47,39 +44,6 @@ def create_image_gallery(raw_images, new_gallery_path):
         f.write(html)
 
 
-class App(QtWidgets.QMainWindow, gui.Ui_MainWindow):
-    """Class for our app."""
-
-    def __init__(self, parent=None):
-        """Init the class."""
-        super(App, self).__init__(parent)
-        self.setupUi(self)
-        # self.source_button.clicked.connect(self.get_source)
-        # self.destination_button.clicked.connect(self.set_destination)
-        self.create_button.clicked.connect(self.create)
-        self.source_folder = ""
-        self.destination_folder = ""
-
-    def create(self):
-        """Create the gallery."""
-        self.source_folder = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose the source directory")
-        self.destination_folder = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose a destination directory")
-        create_image_gallery(self.source_folder, self.destination_folder)
-        # Display a success dialog
-        dlg = QtWidgets.QMessageBox()
-        dlg.setStandardButtons(QtWidgets.QMessageBox.Ok)
-        dlg.setText("Gallery Created: {0}".format(self.destination_folder))
-        dlg.setWindowTitle("Success!")
-        dlg.exec_()
-
-
-def main():
-    """Main function to launch the app."""
-    app = QtWidgets.QApplication(sys.argv)
-    form = App()
-    form.show()
-    app.exec_()
-
-
 if __name__ == "__main__":
-    main()
+    user_dir, new_gallery = get_directories()
+    create_image_gallery(user_dir, new_gallery)
