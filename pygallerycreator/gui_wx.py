@@ -7,10 +7,10 @@ class GalleryApp(wx.Frame):
     def __init__(self, parent, title):
         wx.Frame.__init__(self, parent, title=title, size=(400, 200))
 
-        self.initUI()
+        self._init_ui()
         self.Show()
 
-    def initUI(self):
+    def _init_ui(self):
         """Set up the UI."""
         panel = wx.Panel(self)
 
@@ -18,8 +18,9 @@ class GalleryApp(wx.Frame):
 
         hbox1 = wx.BoxSizer(wx.HORIZONTAL)
         create_button = wx.Button(panel, 1, "Create Gallery")
-        hbox1.Add(create_button, 1, flag=wx.EXPAND|wx.ALL)
-        vbox.Add(hbox1, flag=wx.EXPAND|wx.ALL, border=8)
+        create_button.Bind(wx.EVT_BUTTON, self._on_create_click)
+        hbox1.Add(create_button, 1, flag=wx.EXPAND | wx.ALL)
+        vbox.Add(hbox1, flag=wx.EXPAND | wx.ALL, border=8)
 
         hbox2 = wx.BoxSizer(wx.HORIZONTAL)
         tc = wx.TextCtrl(panel, style=wx.TE_MULTILINE)
@@ -28,7 +29,21 @@ class GalleryApp(wx.Frame):
 
         panel.SetSizer(vbox)
 
+    def _on_create_click(self, e):
+        """Get directories and create the gallery."""
+        # Get source directory
+        source_dir_dialog = wx.DirDialog(self, message="Choose source directory")
+        source_dir_dialog.ShowModal()
+        source_dir_path = source_dir_dialog.GetPath()
+
+        # Get destination directory
+        destination_dir_dialog = wx.DirDialog(self, message="Choose or create destination")
+        destination_dir_dialog.ShowModal()
+        destination_dir_path = destination_dir_dialog.GetPath()
+
+
+
 
 app = wx.App(False)
-frame = GalleryApp(None, 'PyGalleryCreator')
+frame = GalleryApp(parent=None, title='PyGalleryCreator')
 app.MainLoop()
