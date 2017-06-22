@@ -28,3 +28,9 @@ http://lokeshdhakar.com/projects/lightbox2/#options
 **Image in Lightbox**
 
 ![Alt text](screenshot2.png?raw=true)
+
+
+GUI
+======
+The GUI uses wxPython. It *should* build with PyInstaller as long as you run `pyinstaller gui_wx.py -w --noupx` from the pygallerycreator directory.
+Get your .exe from the dist folder.
