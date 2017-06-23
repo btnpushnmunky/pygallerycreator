@@ -23,8 +23,8 @@ class GalleryApp(wx.Frame):
         vbox.Add(hbox1, flag=wx.EXPAND | wx.ALL, border=8)
 
         hbox2 = wx.BoxSizer(wx.HORIZONTAL)
-        tc = wx.TextCtrl(panel, style=wx.TE_MULTILINE)
-        hbox2.Add(tc, 1, flag=wx.EXPAND | wx.ALL)
+        self.tc = wx.TextCtrl(panel, style=wx.TE_MULTILINE)
+        hbox2.Add(self.tc, 1, flag=wx.EXPAND | wx.ALL)
         vbox.Add(hbox2, 1, flag=wx.EXPAND | wx.ALL, border=8)
 
         panel.SetSizer(vbox)
@@ -35,11 +35,18 @@ class GalleryApp(wx.Frame):
         source_dir_dialog = wx.DirDialog(self, message="Choose source directory")
         source_dir_dialog.ShowModal()
         source_dir_path = source_dir_dialog.GetPath()
+        self.tc.AppendText("Source: {0}\n".format(source_dir_path))
 
         # Get destination directory
         destination_dir_dialog = wx.DirDialog(self, message="Choose or create destination")
         destination_dir_dialog.ShowModal()
         destination_dir_path = destination_dir_dialog.GetPath()
+        self.tc.AppendText("Destination: {0}\n".format(destination_dir_path))
+
+        self.tc.AppendText("\n")
+        self.tc.AppendText("Creating gallery....")
+        main.create_image_gallery(source_dir_path, destination_dir_path)
+        self.tc.AppendText("Gallery creation finished.")
 
 
 
