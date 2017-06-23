@@ -1,10 +1,15 @@
 import wx
 import main
+import sys
+
+print(sys._MEIPASS)
 
 
 class GalleryApp(wx.Frame):
-    """ We simply derive a new class of Frame. """
+    """We simply derive a new class of Frame."""
+
     def __init__(self, parent, title):
+        """Init the frame."""
         wx.Frame.__init__(self, parent, title=title, size=(400, 200))
 
         self._init_ui()
@@ -45,10 +50,8 @@ class GalleryApp(wx.Frame):
 
         self.tc.AppendText("\n")
         self.tc.AppendText("Creating gallery....")
-        main.create_image_gallery(source_dir_path, destination_dir_path)
+        main.create_image_gallery(source_dir_path, destination_dir_path, type="gui")
         self.tc.AppendText("Gallery creation finished.")
-
-
 
 
 app = wx.App(False)

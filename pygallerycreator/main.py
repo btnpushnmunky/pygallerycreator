@@ -2,6 +2,7 @@ import copier
 import gallery_creator
 import image_processor
 import os
+import sys
 
 
 def get_user_path():
@@ -33,11 +34,14 @@ def get_directories():
     return raw_directory, new_gallery_dir
 
 
-def create_image_gallery(raw_images, new_gallery_path):
+def create_image_gallery(raw_images, new_gallery_path, type=""):
     """Create all the elements of the gallery."""
     html = gallery_creator.create_html(raw_images)
     copier.make_dist_dir(new_gallery_path)
-    copier.copy_resources(new_gallery_path)
+    if type == "gui":
+        copier.copy_resources_gui(sys._MEIPASS, new_gallery_path)
+    else:
+        copier.copy_resources(new_gallery_path)
     image_processor.create_images(raw_images, new_gallery_path)
 
     with open(os.path.join(new_gallery_path, "index.html"), "w+") as f:

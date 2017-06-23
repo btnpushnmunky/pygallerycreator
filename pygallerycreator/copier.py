@@ -1,6 +1,7 @@
 import os
 import logging
 import shutil
+import sys
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -42,3 +43,14 @@ def copy_resources(path):
     """
     shutil.copytree("vendor/lightbox", "{0}/lightbox".format(path))
     shutil.copytree("vendor/montage", "{0}/montage".format(path))
+
+
+def copy_resources_gui(temp_path, dest_path):
+    """
+    Copy the javascript directories and their contents to the dist directory. This function must be used for the GUI version.
+
+    :param path: Path to the distribution directory
+    :return: None
+    """
+    shutil.copytree("{0}/vendor/lightbox".format(temp_path), "{0}/lightbox".format(dest_path))
+    shutil.copytree("{0}/vendor/montage".format(temp_path), "{0}/montage".format(dest_path))
