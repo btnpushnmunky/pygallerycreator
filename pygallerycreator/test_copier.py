@@ -22,5 +22,5 @@ def test_get_user_home():
 def test_dist_creation(tmpdir):
     temp_dir_path = tmpdir.mkdir("testing")
     print(temp_dir_path)
-    copier.copy_resources(temp_dir_path)
+    copier.copy_resources_gui("vendor", temp_dir_path)
     assert os.path.isdir(temp_dir_path)

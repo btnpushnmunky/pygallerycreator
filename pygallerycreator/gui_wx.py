@@ -1,8 +1,6 @@
 import wx
 import main
-import sys
-
-print(sys._MEIPASS)
+import os
 
 
 class GalleryApp(wx.Frame):
@@ -12,6 +10,7 @@ class GalleryApp(wx.Frame):
         """Init the frame."""
         wx.Frame.__init__(self, parent, title=title, size=(400, 200))
 
+        os.environ["INTERFACE"] = 'gui'
         self._init_ui()
         self.Show()
 

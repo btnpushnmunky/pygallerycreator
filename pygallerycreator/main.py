@@ -41,7 +41,7 @@ def create_image_gallery(raw_images, new_gallery_path, type=""):
     if type == "gui":
         copier.copy_resources_gui(sys._MEIPASS, new_gallery_path)
     else:
-        copier.copy_resources(new_gallery_path)
+        copier.copy_resources_gui("vendor", new_gallery_path)
     image_processor.create_images(raw_images, new_gallery_path)
 
     with open(os.path.join(new_gallery_path, "index.html"), "w+") as f:
