@@ -33,17 +33,6 @@ def make_dist_dir(path):
         print("The specified destination already exists.")
 
 
-def copy_resources(path):
-    """
-    Copy the javascript directories and their contents to the dist directory.
-
-    :param path: Path to the distribution directory
-    :return: None
-    """
-    shutil.copytree("vendor/lightbox", "{0}/lightbox".format(path))
-    shutil.copytree("vendor/montage", "{0}/montage".format(path))
-
-
 def copy_resources_gui(temp_path, dest_path):
     """
     Copy the javascript directories and their contents to the dist directory.

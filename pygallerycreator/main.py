@@ -38,6 +38,7 @@ def create_image_gallery(raw_images, new_gallery_path, type=""):
     """Create all the elements of the gallery."""
     html = gallery_creator.create_html(raw_images)
     copier.make_dist_dir(new_gallery_path)
+    print(type)
     if type == "gui":
         copier.copy_resources_gui(sys._MEIPASS, new_gallery_path)
     else:
