@@ -36,7 +36,6 @@ def get_directories():
 
 def create_image_gallery(raw_images, new_gallery_path, type=""):
     """Create all the elements of the gallery."""
-    html = gallery_creator.create_html(raw_images)
     copier.make_dist_dir(new_gallery_path)
     print(type)
     if type == "gui":
@@ -45,6 +44,7 @@ def create_image_gallery(raw_images, new_gallery_path, type=""):
         copier.copy_resources_gui("vendor", new_gallery_path)
     image_processor.create_images(raw_images, new_gallery_path)
 
+    html = gallery_creator.create_html(new_gallery_path + "/large_imgs")
     with open(os.path.join(new_gallery_path, "index.html"), "w+") as f:
         f.write(html)
 
