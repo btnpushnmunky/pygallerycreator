@@ -7,5 +7,11 @@
 __pycache__
 .idea
 *.pyc
+build
+dist
 
 \.coverage
+
+*.pdy
+
+*.ipynb

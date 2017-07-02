@@ -18,6 +18,21 @@ def create_images(user_images_dir, base_save_path):
     os.mkdir(thumb_dir)
     os.mkdir(overlay_image_dir)
 
+    def base_filename(filename):
+        """
+        Process the filename so it preserves periods.
+
+        :param filename: Filename as a string
+        :return: Base image name without extension
+        """
+        split_filename = filename.rsplit(".")
+        fn_length = len(split_filename)
+        if fn_length > 2:
+            basename = ".".join(split_filename[:-1])
+        else:
+            basename = split_filename[0]
+        return basename
+
     def open_image(img_filename):
         """
         Open an image file and return it and its name.
@@ -25,7 +40,8 @@ def create_images(user_images_dir, base_save_path):
         :param img_filename: Filename of image as a string
         :return: Image with name including extension
         """
-        final_img_name = img_filename.split('.')[0]
+        final_img_name = base_filename(img_filename)
+        # final_img_name = img_filename.rsplit('.')[0]
         outfile = ".".join((final_img_name, "jpg"))
         img = Image.open(os.path.join(user_images_dir, img_filename))
         return img, outfile

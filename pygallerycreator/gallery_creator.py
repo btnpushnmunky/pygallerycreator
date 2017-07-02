@@ -1,8 +1,8 @@
 import os
-from jinja2 import Environment, FileSystemLoader
-
-
-JINJA_ENV = Environment(loader=FileSystemLoader("templates"))
+# from jinja2 import Environment, FileSystemLoader
+import jinja2
+from my_html import my_html
+# JINJA_ENV = Environment(loader=FileSystemLoader("templates"))
 
 
 def get_image_list(dir_path):
@@ -23,6 +23,7 @@ def create_html(image_dir):
     :param image_dir: Path to the directory of images
     :return: HTML for the index.html file
     """
-    template = JINJA_ENV.get_template("index.html")
+    template = jinja2.Template(my_html)
+    # template = template_env.get_template(TEMPLATE_FILE)
     images = get_image_list(image_dir)
     return template.render(images=images)

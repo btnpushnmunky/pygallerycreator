@@ -9,3 +9,5 @@ before_script:
 test:
   script:
     - python -m pytest --cov=.
+  only:
+    - master
