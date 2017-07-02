@@ -10,8 +10,8 @@ my_html = """
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="montage/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="montage/css/style.css" />
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
-        <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" type="text/css" href="lightbox/css/lightbox.min.css"/>
     </head>
     <body>
@@ -27,7 +27,7 @@ my_html = """
                 {% endfor %}
 			</div>
         </div>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
         <script type="text/javascript" src="lightbox/js/lightbox.min.js"></script>
         <script type="text/javascript" src="montage/js/jquery.montage.min.js"></script>
         <script type="text/javascript">
