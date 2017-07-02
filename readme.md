@@ -1,16 +1,12 @@
 **Github Status**
 
-[![Build Status](https://travis-ci.org/btnpushnmunky/pygallerycreator.svg?branch=master)](https://travis-ci.org/btnpushnmunky/pygallerycreator.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/btnpushnmunky/pygallerycreator/badge.svg?branch=master)](https://coveralls.io/github/btnpushnmunky/pygallerycreator?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/btnpushnmunky/pygallerycreator/badge.svg?branch=master)](https://coveralls.io/github/btnpushnmunky/pygallerycreator?branch=master)
 
 
 
 **Gitlab Status**
 
-[![build status](https://gitlab.com/dsross/PyGalleryCreator/badges/master/build.svg)](https://gitlab.com/dsross/PyGalleryCreator/commits/master) [![coverage report](https://gitlab.com/dsross/PyGalleryCreator/badges/master/coverage.svg)](https://gitlab.com/dsross/PyGalleryCreator/commits/master)
-
-
-
-*Note: Only master is building.*
+[![coverage report](https://gitlab.com/dsross/PyGalleryCreator/badges/master/coverage.svg)](https://gitlab.com/dsross/PyGalleryCreator/commits/master)
 
 
 
@@ -22,34 +18,26 @@ A utility to create web galleries from a directory of images
 
 **Requirements**
 
+I've been using Anaconda's Python 3 distribution: https://www.continuum.io/downloads
 
+Create a Python 3 environment once you've installed Python.
 
-Python 3
+Then:
 
+* `pip install -r requirements.txt` 
+* `pip install git+https://github.com/pyinstaller/pyinstaller.git`
 
+To build the gui:
 
-Requirements in requirements.txt
+* Adjust `gui_wx.spec` to match your file paths.
+* Run `pyinstaller gui_wx.spec` from inside the pygallercreator directory.
 
-
-
-Automatic Image Montage (included in repo)
-
-https://tympanus.net/codrops/2011/08/30/automatic-image-montage/
-
-
-
-Lightbox (included in repo)
-
-http://lokeshdhakar.com/projects/lightbox2/#options
-
-
+Get your .exe from the dist folder.
 
 **Full gallery view**
 
 
-
 ![Alt text](screenshot1.png?raw=true)
-
 
 
 **Image in Lightbox**
@@ -59,18 +47,8 @@ http://lokeshdhakar.com/projects/lightbox2/#options
 ![Alt text](screenshot2.png?raw=true)
 
 
+**Vendor Files Included**
 
+Automatic Image Montage: https://tympanus.net/codrops/2011/08/30/automatic-image-montage/
 
-
-GUI
-
-======
-Building the GUI requires the latest source of PyInstaller. Do this: `pip install https://github.com/pyinstaller/pyinstaller.git`. This must be done separately from `pip install -r requirements.txt`
-
-The GUI uses wxPython. It *should* build with PyInstaller as long as you run `pyinstaller gui_wx.spec -w --noupx` from the pygallerycreator directory.
-
-Get your .exe from the dist folder.
-
-
-
-Prior to building, you'll need to adjust the gui_wx.spec folder to match your user paths.
+Lightbox: http://lokeshdhakar.com/projects/lightbox2/#options
