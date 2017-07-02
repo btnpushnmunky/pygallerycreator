@@ -52,4 +52,4 @@ urllib3==1.21.1
 wcwidth==0.1.7
 widgetsnbextension==2.0.0
 wincertstore==0.2
-wxPython==4.0.0a3
+wxPython
