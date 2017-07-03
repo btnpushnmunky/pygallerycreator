@@ -1,0 +1,13 @@
+image: continuumio/anaconda3
+
+before_script:
+  - python -V               
+  - apt-get install gcc
+  - pip install -r requirements.txt
+  - cd pygallerycreator
+
+test:
+  script:
+    - python -m pytest --cov=.
+  only:
+    - master
