@@ -6,7 +6,7 @@ python:
 addons:
   apt:
     sources:
-      - sourceline: deb 'http://repos.codelite.org/wx3.1.0/ubuntu/ trusty universe'
+      - sourceline: 'http://repos.codelite.org/wx3.1.0/ubuntu/ trusty universe'
     packages:
       - libwxbase3.1-0-unofficial 
       - libwxbase3.1-dev
