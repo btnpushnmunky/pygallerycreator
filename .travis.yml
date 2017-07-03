@@ -4,9 +4,9 @@ python:
   - 3.6
 
 before_install:
-  - sudo apt-add-repository 'deb http://repos.codelite.org/wx3.1.0/ubuntu/ precise universe'
+  - sudo apt-add-repository 'deb http://repos.codelite.org/wx3.1.0/ubuntu/ precise universe' -y
   - apt-get update
-  - apt-get install libwxbase3.1-0-unofficial \
+  - apt-get install -y libwxbase3.1-0-unofficial \
                  libwxbase3.1-dev \
                  libwxgtk3.1-0-unofficial \
                  libwxgtk3.1-dev \
