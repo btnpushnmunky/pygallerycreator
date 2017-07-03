@@ -8,21 +8,17 @@ addons:
     sources:
       - sourceline: deb 'http://repos.codelite.org/wx2.8.0/ubuntu/ trusty universe'
     packages:
-      - libwxbase2.8
-      - libwxbase2.8
-      - libwxgtk2.8
-      - libwxgtk2.8
-      - wx2.8-headers
+      - libwxbase3.0-0
+      - libwxbase3.0-0-dbg
+      - libwxgtk3.0-0
+      - libwxgtk3.0-0-dbg
+      - wx3.0-headers
       - wx-common
-      - libwxgtk-webview2.8
-      - libwxgtk-webview2.8
-      - libwxgtk-media2.8
-      - libwxbase2.8
-      - libwxgtk2.8
-      - libwxgtk-webview2.8
-      - libwxgtk-media2.8
-      - wx2.8-i18n
-      - wx2.8-examples
+      - libwxgtk-webview3.0-0
+      - libwxgtk-webview3.0-0-dbg
+      - libwxgtk-media3.0-0
+      - libwxbase3.0-0
+      - libwxgtk3.0-0
 
 script:
   - cd pygallerycreator 
