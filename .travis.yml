@@ -3,25 +3,27 @@ language: python
 python:
   - 3.6
 
-before_install:
-  - sudo apt-add-repository 'deb http://repos.codelite.org/wx3.1.0/ubuntu/ precise universe' -y
-  - apt-get update
-  - apt-get install -y libwxbase3.1-0-unofficial \
-                 libwxbase3.1-dev \
-                 libwxgtk3.1-0-unofficial \
-                 libwxgtk3.1-dev \
-                 wx3.1-headers \
-                 wx-common \
-                 libwxgtk-webview3.1-0-unofficial \
-                 libwxgtk-webview3.1-dev \
-                 libwxgtk-media3.1-0-unofficial \
-                 libwxgtk-media3.1-dev \
-                 libwxbase3.1-0-unofficial-dbg \
-                 libwxgtk3.1-0-unofficial-dbg \
-                 libwxgtk-webview3.1-0-unofficial-dbg \
-                 libwxgtk-media3.1-0-unofficial-dbg \
-                 wx3.1-i18n \
-                 wx3.1-examples
+addons:
+  apt:
+    sources:
+      - sourceline: deb 'http://repos.codelite.org/wx3.1.0/ubuntu/ precise universe'
+    packages:
+      - libwxbase3.1-0-unofficial 
+      - libwxbase3.1-dev
+      - libwxgtk3.1-0-unofficial
+      - libwxgtk3.1-dev
+      - wx3.1-headers
+      - wx-common
+      - libwxgtk-webview3.1-0-unofficial
+      - libwxgtk-webview3.1-dev
+      - libwxgtk-media3.1-0-unofficial
+      - libwxgtk-media3.1-dev
+      - libwxbase3.1-0-unofficial-dbg
+      - libwxgtk3.1-0-unofficial-dbg
+      - libwxgtk-webview3.1-0-unofficial-dbg
+      - libwxgtk-media3.1-0-unofficial-dbg
+      - wx3.1-i18n
+      - wx3.1-examples
 
 script:
   - cd pygallerycreator 
