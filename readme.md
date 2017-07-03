@@ -27,6 +27,8 @@ Then:
 * `pip install -r requirements.txt` 
 * `pip install git+https://github.com/pyinstaller/pyinstaller.git`
 
+If you're building on Windows, you may need to install `pywin32`. To do so: `conda install pywin32==220`.
+
 To build the gui:
 
 * Adjust `gui_wx.spec` to match your file paths.
