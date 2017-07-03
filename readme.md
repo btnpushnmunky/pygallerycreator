@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gl/dsross/pygallerycreator/branch/master/graph/badge.svg)](https://codecov.io/gl/dsross/pygallerycreator)
+[![codecov](https://codecov.io/gh/btnpushnmunky/pygallerycreator/branch/master/graph/badge.svg)](https://codecov.io/gh/btnpushnmunky/pygallerycreator)
 
 
 A utility to create web galleries from a directory of images
