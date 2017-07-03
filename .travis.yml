@@ -1,23 +1,22 @@
 language: python 
- 
+
 python: 
   - 3.6 
 
 before_install:
   - sudo apt-get install gcc
- 
+
 install: 
   - pip install -r requirements.txt 
   - pip install coveralls 
- 
+
 script: 
   - cd pygallerycreator  
   - python -m pytest --cov=. 
-   
- 
+
 after_success: 
   coveralls 
- 
+
 branches: 
-  only: 
-  	- master
+  only:
+    - master
