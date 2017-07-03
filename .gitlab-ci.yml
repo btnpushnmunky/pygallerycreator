@@ -2,7 +2,6 @@ image: continuumio/anaconda3
 
 before_script:
   - python -V               
-  - conda install pywin32==220                    # Print out python version for debugging
   - pip install -r requirements.txt
   - cd pygallerycreator
 
