@@ -1,17 +1,5 @@
-**Github Status**
-
-[![Coverage Status](https://coveralls.io/repos/github/btnpushnmunky/pygallerycreator/badge.svg?branch=master)](https://coveralls.io/github/btnpushnmunky/pygallerycreator?branch=master)
-
-
-
-**Gitlab Status**
-
-[![coverage report](https://gitlab.com/dsross/PyGalleryCreator/badges/master/coverage.svg)](https://gitlab.com/dsross/PyGalleryCreator/commits/master)
-
-
 
 A utility to create web galleries from a directory of images
-
 ============================================================
 
 
