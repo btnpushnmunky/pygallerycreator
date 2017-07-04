@@ -5,8 +5,6 @@ python:
 
 addons:
   apt:
-    sources:
-      - sourceline: deb 'http://repos.codelite.org/wx2.8.0/ubuntu/ trusty universe'
     packages:
       - libwxbase3.0-0
       - libwxbase3.0-0-dbg
