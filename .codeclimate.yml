@@ -1,6 +1,6 @@
 languages:
   Python: true
 exclude_paths:
-  - "vendor"
-  - "build"
-  - "dist"
+  - "pygallerycreator/vendor"
+  - "pygallerycreator/build"
+  - "pygallerycreator/dist"
