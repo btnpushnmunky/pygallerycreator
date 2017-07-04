@@ -1,11 +1,6 @@
 import os
 from . import copier
 
-
-def test_index_template_exists():
-    assert os.path.isfile("templates/index.html")
-
-
 def test_montage_dir_exists():
     assert os.path.isdir("vendor/montage")
 

@@ -2,6 +2,7 @@ import os
 import sys
 import copier
 import image_processor
+import gallery_creator
 
 
 def get_user_path():
