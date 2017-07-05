@@ -49,7 +49,7 @@ class GalleryApp(wx.Frame):
 
         self.tc.AppendText("\n")
         self.tc.AppendText("Creating gallery....")
-        main.create_image_gallery(source_dir_path, destination_dir_path, type="gui")
+        main.create_image_gallery(source_dir_path, destination_dir_path, interface_type="gui")
         self.tc.AppendText("Gallery creation finished.")
 
 

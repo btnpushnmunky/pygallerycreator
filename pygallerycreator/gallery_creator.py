@@ -1,8 +1,6 @@
 import os
-# from jinja2 import Environment, FileSystemLoader
 import jinja2
 from my_html import my_html
-# JINJA_ENV = Environment(loader=FileSystemLoader("templates"))
 
 
 def get_image_list(dir_path):

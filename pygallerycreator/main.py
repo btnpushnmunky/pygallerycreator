@@ -21,6 +21,7 @@ def get_user_path():
         gallery_dir_name = os.path.join(user_def_path)
     return gallery_dir_name
 
+
 def get_raw_image_dir():
     """
     Get the user's image directory.
@@ -31,6 +32,7 @@ def get_raw_image_dir():
     d = input("Please enter the path to your image directory: ")
     return d
 
+
 def get_directories():
     """Get directories."""
 
@@ -38,13 +40,14 @@ def get_directories():
     new_gallery_dir = get_user_path()
     return raw_directory, new_gallery_dir
 
-def create_image_gallery(raw_images, new_gallery_path, type=""):
+
+def create_image_gallery(raw_images, new_gallery_path, interface_type=""):
 
     """Create all the elements of the gallery."""
 
     copier.make_dist_dir(new_gallery_path)
-    print(type)
-    if type == "gui":
+    print(interface_type)
+    if interface_type == "gui":
         copier.copy_resources_gui(sys._MEIPASS, new_gallery_path)
     else:
         copier.copy_resources_gui("vendor", new_gallery_path)
