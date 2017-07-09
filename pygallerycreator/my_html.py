@@ -66,7 +66,7 @@ my_html = """
                         if( cnt === totalImgs ) {
                             $imgs.show();
                             $container.montage({
-                                fillLastRow             : true,
+                                fillLastRow             : false,
                                 alternateHeight         : true,
                                 alternateHeightRange    : {
                                     min : 90,
