@@ -36,6 +36,7 @@ class GalleryApp(wx.Frame):
     def _on_create_click(self, e):
         """Get directories and create the gallery."""
         # Get source directory
+        # TODO: Use a progress indicator while processing
         source_dir_dialog = wx.DirDialog(self, message="Choose source directory")
         source_dir_dialog.ShowModal()
         source_dir_path = source_dir_dialog.GetPath()
