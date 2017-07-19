@@ -10,7 +10,7 @@ def get_image_list(dir_path):
     :param dir_path: Path to the directory of images
     :return:  A list of image filenames
     """
-    image_list = [image for image in os.listdir(dir_path)]
+    image_list = [image for image in os.listdir(dir_path) if os.path.splitext(image)[1].lower() == ".jpg"]
     return image_list
 
 

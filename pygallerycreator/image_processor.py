@@ -53,14 +53,17 @@ def create_images(user_images_dir, base_save_path):
         :param original_image: Filename as string
         :return: None
         """
-        img, img_name = open_image(original_image)
-        img.thumbnail(THUMB_SIZE)
-        thumb_file = os.path.join(thumb_dir, img_name)
-        img.save(thumb_file)
-        large_img, large_img_name = open_image(original_image)
-        large_img.thumbnail(LARGE_SIZE)
-        large_file = os.path.join(overlay_image_dir, large_img_name)
-        large_img.save(large_file)
+        if os.path.splitext(original_image)[1].lower() == '.jpg':
+            img, img_name = open_image(original_image)
+            img.thumbnail(THUMB_SIZE)
+            thumb_file = os.path.join(thumb_dir, img_name)
+            img.save(thumb_file)
+            large_img, large_img_name = open_image(original_image)
+            large_img.thumbnail(LARGE_SIZE)
+            large_file = os.path.join(overlay_image_dir, large_img_name)
+            large_img.save(large_file)
+        else:
+            pass
 
     for file_name in os.listdir(user_images_dir):
         create_image_versions(file_name)
