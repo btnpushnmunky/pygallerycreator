@@ -46,7 +46,6 @@ def create_image_gallery(raw_images, new_gallery_path, interface_type=""):
     """Create all the elements of the gallery."""
 
     copier.make_dist_dir(new_gallery_path)
-    print(interface_type)
     if interface_type == "gui":
         copier.copy_resources_gui(sys._MEIPASS, new_gallery_path)
     else:
