@@ -15,7 +15,7 @@ ipython==6.1.0
 ipython-genutils==0.2.0
 ipywidgets==6.0.0
 jedi==0.10.2
-Jinja2==2.9.6
+Jinja2==2.10.1
 jsonschema==2.6.0
 jupyter-client==5.0.1
 jupyter-console==5.1.0
@@ -29,7 +29,7 @@ olefile==0.44
 pandocfilters==1.4.1
 path.py==10.3.1
 pickleshare==0.7.4
-Pillow==6.2.0
+Pillow>=6.2.2
 prompt-toolkit==1.0.14
 py==1.4.33
 pyflakes==1.5.0
