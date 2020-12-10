@@ -4,6 +4,8 @@
 A utility to create web galleries from a directory of images
 ============================================================
 
+The version with a gui build has moved to the gui branch.
+=================
 
 **Requirements**
 
