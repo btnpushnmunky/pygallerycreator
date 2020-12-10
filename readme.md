@@ -1,4 +1,3 @@
-[![codecov](https://codecov.io/gh/btnpushnmunky/pygallerycreator/branch/master/graph/badge.svg)](https://codecov.io/gh/btnpushnmunky/pygallerycreator)
 [![codeclimate](https://codeclimate.com/github/btnpushnmunky/pygallerycreator/badges/gpa.svg)](https://codeclimate.com/github/btnpushnmunky/pygallerycreator)
 
 A utility to create web galleries from a directory of images
@@ -15,6 +14,10 @@ Then:
 
 * `pip install -r requirements.txt` 
 
+Tests may be run from `pygallerycreator` directory using [pytest](https://docs.pytest.org/en/stable/).
+
+----------------
+
 **Full gallery view**
 
 ![Alt text](screenshot1.png?raw=true)
@@ -26,7 +29,5 @@ Then:
 **Vendor Files Included**
 
 Automatic Image Montage: https://tympanus.net/codrops/2011/08/30/automatic-image-montage/
-
-
 
 Lightbox: http://lokeshdhakar.com/projects/lightbox2/#options
