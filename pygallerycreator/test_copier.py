@@ -1,5 +1,5 @@
 import os
-from . import copier
+from pygallerycreator import copier
 
 def test_montage_dir_exists():
     assert os.path.isdir("vendor/montage")

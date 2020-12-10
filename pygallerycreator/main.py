@@ -1,8 +1,8 @@
 import os
 import sys
-import copier
-import image_processor
-import gallery_creator
+from . import copier
+from . import image_processor
+from . import gallery_creator
 
 
 def get_user_path():
@@ -14,7 +14,7 @@ def get_user_path():
 
     dir_name_input = "Gallery path. Created in home directory. (ex: Desktop/mygallery): [py_gallery_dist]"
     gallery_dir_name = input(dir_name_input)
-    if gallery_dir_name is "":
+    if gallery_dir_name == "":
         gallery_dir_name = copier.default_dist_path
     else:
         user_def_path = os.path.join(copier.get_user_home(), gallery_dir_name)
@@ -46,10 +46,7 @@ def create_image_gallery(raw_images, new_gallery_path, interface_type=""):
     """Create all the elements of the gallery."""
 
     copier.make_dist_dir(new_gallery_path)
-    if interface_type == "gui":
-        copier.copy_resources_gui(sys._MEIPASS, new_gallery_path)
-    else:
-        copier.copy_resources_gui("vendor", new_gallery_path)
+    copier.copy_resources_gui("vendor", new_gallery_path)
     image_processor.create_images(raw_images, new_gallery_path)
     filename_directory = os.path.join(new_gallery_path, "large_imgs")
     html = gallery_creator.create_html(filename_directory)

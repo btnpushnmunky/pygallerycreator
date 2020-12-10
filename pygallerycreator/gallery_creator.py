@@ -1,6 +1,6 @@
 import os
 import jinja2
-from my_html import my_html
+from pygallerycreator.my_html import my_html
 
 
 def get_image_list(dir_path):
