@@ -1,4 +1,4 @@
-my_html = """
+html = """
 
 <!DOCTYPE html>
 <html lang="en">

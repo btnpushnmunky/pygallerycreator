@@ -1,6 +1,6 @@
 import os
 import jinja2
-from pygallerycreator.my_html import my_html
+from pygallerycreator.montage_html import html
 
 
 def get_image_list(dir_path):
@@ -22,7 +22,7 @@ def create_html(image_dir):
     :return: HTML for the index.html file
     """
     # TODO: Add ability to create a different type of gallery. Bootstrap for example.
-    template = jinja2.Template(my_html)
+    template = jinja2.Template(html)
     # template = template_env.get_template(TEMPLATE_FILE)
     images = get_image_list(image_dir)
     return template.render(images=images)
