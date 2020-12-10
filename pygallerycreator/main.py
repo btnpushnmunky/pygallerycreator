@@ -1,8 +1,8 @@
 import os
 import sys
-from . import copier
-from . import image_processor
-from . import gallery_creator
+from pygallerycreator import copier
+from pygallerycreator import image_processor
+from pygallerycreator import gallery_creator
 
 
 def get_user_path():
