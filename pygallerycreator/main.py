@@ -1,8 +1,8 @@
 import os
 import sys
-from pygallerycreator import copier
-from pygallerycreator import image_processor
-from pygallerycreator import gallery_creator
+import copier
+import image_processor
+import gallery_creator
 
 
 def get_user_path():
@@ -41,19 +41,19 @@ def get_directories():
     return raw_directory, new_gallery_dir
 
 
-def create_image_gallery(raw_images, new_gallery_path, interface_type=""):
-
+def create_image_gallery(raw_images, new_gallery_path, kind):
     """Create all the elements of the gallery."""
 
     copier.make_dist_dir(new_gallery_path)
     copier.copy_resources_gui("vendor", new_gallery_path)
     image_processor.create_images(raw_images, new_gallery_path)
     filename_directory = os.path.join(new_gallery_path, "large_imgs")
-    html = gallery_creator.create_html(filename_directory)
+    html = gallery_creator.create_html(filename_directory, kind)
     with open(os.path.join(new_gallery_path, "index.html"), "w+") as f:
         f.write(html)
 
 
 if __name__ == "__main__":
     user_dir, new_gallery = get_directories()
-    create_image_gallery(user_dir, new_gallery)
+    kind = input("What type of gallery (bootstrap, montage)? ")
+    create_image_gallery(user_dir, new_gallery, kind)

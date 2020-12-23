@@ -1,5 +1,7 @@
-from pygallerycreator import main
-from pygallerycreator.copier import default_dist_path
+import sys, os
+sys.path.append(os.path.realpath(os.path.dirname(__file__)))
+import main
+from copier import default_dist_path
 import tempfile
 import os
 

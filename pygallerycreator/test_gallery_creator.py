@@ -1,5 +1,6 @@
-from . import gallery_creator
-import os
+import sys, os
+sys.path.append(os.path.realpath(os.path.dirname(__file__)))
+import gallery_creator
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
