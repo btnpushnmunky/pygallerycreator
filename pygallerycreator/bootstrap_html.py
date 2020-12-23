@@ -27,7 +27,7 @@ Replace '0' with corresponding slide number.
 <div class="row" id="gallery" data-toggle="modal" data-target="#exampleModal">
 
 {% for image in images %}
-  <div class="col-12 col-sm-6 col-lg-3">
+  <div class="col-3 col-lg-2">
     <img class="w-100" src="thumbs/{{image}}" alt="First slide" data-target="#carouselExample" data-slide-to="{{images.index(image)}}">
   </div>
 {% endfor %}

@@ -44,3 +44,5 @@ def copy_resources_gui(temp_path, dest_path):
     """
     shutil.copytree("{0}/lightbox".format(temp_path), "{0}/lightbox".format(dest_path))
     shutil.copytree("{0}/montage".format(temp_path), "{0}/montage".format(dest_path))
+    shutil.copytree("{0}/bootstrap-gallery".format(temp_path), "{0}/bootstrap-gallery".format(dest_path))
+

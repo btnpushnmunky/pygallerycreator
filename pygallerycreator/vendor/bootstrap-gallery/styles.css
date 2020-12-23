@@ -1,11 +1,17 @@
 
+body {
+  margin: 15px;
+}
+
 #gallery img {
   height: 18vw;
+  /* height: 50px; */
   object-fit: cover;
+  margin-bottom: 30px;
 }
 @media (min-width: 576px) {
   #gallery img {
-    height: 35vw;
+    height: 18vw;
   }
 }
 @media (min-width: 992px) {
