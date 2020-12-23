@@ -22,7 +22,6 @@ def create_html(image_dir, kind="montage"):
     :return: HTML for the index.html file
     """
     if kind == "montage":
-    # TODO: Add ability to create a different type of gallery. Bootstrap for example.
         template = jinja2.Template(m_html)
     elif kind == "bootstrap":
         template = jinja2.Template(b_html)

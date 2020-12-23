@@ -26,12 +26,9 @@ Replace '0' with corresponding slide number.
 <body>
 <div class="row" id="gallery" data-toggle="modal" data-target="#exampleModal">
 
-<!-- TODO -->
-<!-- simple jinja loop here -->
-<! -- END TODO -->
 {% for image in images %}
   <div class="col-12 col-sm-6 col-lg-3">
-    <img class="w-100" src="large_imgs/{{image}}" alt="First slide" data-target="#carouselExample" data-slide-to="{{images.index(image)}}">
+    <img class="w-100" src="thumbs/{{image}}" alt="First slide" data-target="#carouselExample" data-slide-to="{{images.index(image)}}">
   </div>
 {% endfor %}
 </div>
@@ -50,30 +47,23 @@ This part is straight out of Bootstrap docs. Just a carousel inside a modal.
       </div>
       <div class="modal-body">
         <div id="carouselExample" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
+          <!-- <ol class="carousel-indicators">
             <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExample" data-slide-to="1"></li>
-            <li data-target="#carouselExample" data-slide-to="2"></li>
-            <li data-target="#carouselExample" data-slide-to="3"></li>
-          </ol>
+            {% for image in images %}
+              <li data-target="#carouselExample" data-slide-to="{{images.index(image)}}"></li>
+            {% endfor %}
+          </ol> -->
           <div class="carousel-inner">
-
-<!-- TODO -->
-<!-- Jinja loop here too for images, but the first item must have active in the class as well -->
-<!-- END TODO -->
-
             <div class="carousel-item active">
-              <img class="d-block w-100" src="https://images.unsplash.com/photo-1546853020-ca4909aef454?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="First slide">
+              <img class="d-block w-100" src="large_imgs/{{images[0]}}" alt="First slide">
             </div>
+
+            {% for image in images[1:] %}
             <div class="carousel-item">
-              <img class="d-block w-100" src="https://images.unsplash.com/photo-1546534505-d534e27ecb35?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="Second slide">
+              <img class="d-block w-100" src="large_imgs/{{image}}" alt="Second slide">
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="https://images.unsplash.com/photo-1546111380-cfca9a43dd85?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="https://images.unsplash.com/photo-1547288242-f3d375fc7b5f?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="Fourth slide">
-            </div>
+            {% endfor %}
+
           </div>
           <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -10,6 +10,10 @@ def test_lightbox_dir_exists():
     assert os.path.isdir("vendor/lightbox")
 
 
+def test_bootstrap_dir_exists():
+    assert os.path.isdir("vendor/bootstrap-gallery")
+
+
 def test_get_user_home():
     path = copier.get_user_home()
     assert path == os.path.expanduser("~")
