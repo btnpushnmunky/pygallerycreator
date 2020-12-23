@@ -56,11 +56,17 @@ This part is straight out of Bootstrap docs. Just a carousel inside a modal.
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img class="d-block w-100" src="large_imgs/{{images[0]}}" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <p>{{images[0]}}</p>
+              </div>
             </div>
 
             {% for image in images[1:] %}
             <div class="carousel-item">
               <img class="d-block w-100" src="large_imgs/{{image}}" alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                <p>{{image}}</p>
+              </div>
             </div>
             {% endfor %}
 
