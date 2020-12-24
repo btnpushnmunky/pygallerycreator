@@ -42,9 +42,12 @@ def get_directories():
     return raw_directory, new_gallery_dir
 
 
-def create_image_gallery(raw_images, new_gallery_path, kind):
+def create_image_gallery(raw_images, new_gallery_path, kind="bootstrap"):
     """Create all the elements of the gallery."""
-
+    if kind == "":
+        kind = "bootstrap"
+    else:
+        pass
     copier.make_dist_dir(new_gallery_path)
     copier.copy_resources_gui("vendor", new_gallery_path)
     image_processor.create_images(raw_images, new_gallery_path)
@@ -56,5 +59,5 @@ def create_image_gallery(raw_images, new_gallery_path, kind):
 
 if __name__ == "__main__":
     user_dir, new_gallery = get_directories()
-    kind = input("What type of gallery (bootstrap, montage)? ")
+    kind = input("What type of gallery (bootstrap, montage)? [bootstrap]")
     create_image_gallery(user_dir, new_gallery, kind)
