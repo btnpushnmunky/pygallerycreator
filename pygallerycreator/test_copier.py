@@ -14,9 +14,9 @@ def test_bootstrap_dir_exists():
     assert os.path.isdir("vendor/bootstrap-gallery")
 
 
-def test_get_user_home():
-    path = copier.get_user_home()
-    assert path == os.path.expanduser("~")
+def test_get_user_desktop():
+    path = copier.get_user_desktop()
+    assert path == os.path.join(os.path.expanduser("~"), "Desktop")
 
 
 def test_dist_creation(tmpdir):

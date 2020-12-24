@@ -21,8 +21,8 @@ def test_img_directory_creation():
 
 
 def test_large_file_creation():
-    assert len(os.listdir(os.path.join(TEST_DIR_PATH, "large_imgs"))) == 3
+    assert len(os.listdir(os.path.join(TEST_DIR_PATH, "large_imgs"))) == 6
 
 
 def test_thumbnail_creation():
-    assert len(os.listdir(os.path.join(TEST_DIR_PATH, "thumbs"))) == 3
+    assert len(os.listdir(os.path.join(TEST_DIR_PATH, "thumbs"))) == 6

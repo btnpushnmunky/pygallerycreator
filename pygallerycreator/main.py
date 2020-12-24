@@ -12,12 +12,13 @@ def get_user_path():
     :return: New gallery directory path as a string.
     """
 
-    dir_name_input = "Gallery path. Created in home directory. (ex: Desktop/mygallery): [py_gallery_dist]"
+    dir_name_input = "Gallery path. Created on Desktop. [py_gallery_dist] "
     gallery_dir_name = input(dir_name_input)
+    desktop_dir = os.path.join(copier.get_user_desktop(), 'Desktop')
     if gallery_dir_name == "":
         gallery_dir_name = copier.default_dist_path
     else:
-        user_def_path = os.path.join(copier.get_user_home(), gallery_dir_name)
+        user_def_path = os.path.join(copier.get_user_desktop(), gallery_dir_name)
         gallery_dir_name = os.path.join(user_def_path)
     return gallery_dir_name
 

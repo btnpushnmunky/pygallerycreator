@@ -14,7 +14,7 @@ def test_create_image_list():
     """Test creating the image list."""
     image_list = gallery_creator.get_image_list(TEST_IMG_DIR)
     logger.debug("Test list is {0}".format(image_list))
-    assert len(image_list) == 3
+    assert len(image_list) == 6
 
 
 def test_create_html():

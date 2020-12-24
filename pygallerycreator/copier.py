@@ -7,15 +7,15 @@ logger = logging.getLogger(__name__)
 base_dir = os.path.dirname((os.path.realpath(__file__)))
 
 
-def get_user_home():
+def get_user_desktop():
     """
     Find the user's desktop folder.
 
     :return: Path to user's desktop as a string
     """
-    return os.path.expanduser("~")
+    return os.path.join(os.path.expanduser("~"), "Desktop")
 
-home = get_user_home()
+home = get_user_desktop()
 
 default_dist_path = os.path.join(home, 'py_gallery_dist')
 

@@ -32,7 +32,7 @@ def test_create_gallery(monkeypatch):
     tdir = tempfile.TemporaryDirectory()
     my_temp_dir = os.path.join(tdir.name, 'test_imgs_output')
     monkeypatch.setitem(__builtins__, "input", lambda x: my_temp_dir)
-    main.create_image_gallery("test_imgs", my_temp_dir)
+    main.create_image_gallery("test_imgs", my_temp_dir, "bootstrap")
 
 
 def teardown_method():
