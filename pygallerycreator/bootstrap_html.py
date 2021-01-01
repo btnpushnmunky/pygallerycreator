@@ -13,6 +13,7 @@ html = """
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="bootstrap-gallery/styles.css">
+  <script src="js/lazysizes.min.js" async=""></script>
 </head>
 <!-- Gallery -->
 <!-- 
@@ -28,7 +29,7 @@ Replace '0' with corresponding slide number.
 
 {% for image in images %}
   <div class="col-3 col-lg-2">
-    <img class="w-100" src="thumbs/{{image}}" alt="First slide" data-target="#carouselExample" data-slide-to="{{images.index(image)}}">
+    <img class="w-100 lazyload" data-src="thumbs/{{image}}" alt="First slide" data-target="#carouselExample" data-slide-to="{{images.index(image)}}">
   </div>
 {% endfor %}
 </div>
@@ -63,7 +64,7 @@ This part is straight out of Bootstrap docs. Just a carousel inside a modal.
 
             {% for image in images[1:] %}
             <div class="carousel-item">
-              <img class="d-block w-100" src="large_imgs/{{image}}" alt="Second slide">
+              <img class="d-block w-100 lazyload" data-src="large_imgs/{{image}}" alt="Second slide">
               <div class="carousel-caption d-none d-md-block">
                 <p>{{image}}</p>
               </div>
