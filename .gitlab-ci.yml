@@ -176,8 +176,9 @@ include:
 test:
   stage: test
   script:
-    - apt-get update -qy
-    - apt-get install -y python3-dev python3-pip
+    # - apt-get update -qy
+    # - apt-get install -y python3-dev python3-pip
+    - apk add --no-cache python3 py3-pip 
     - pip3 install -r requirements.txt
     - cd pygallerycreator
     - pytest
