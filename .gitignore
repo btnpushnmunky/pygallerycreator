@@ -16,3 +16,5 @@ dist
 *.pdy
 
 *.ipynb
+*.sublime-project
+*.sublime-workspace
